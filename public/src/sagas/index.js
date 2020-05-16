@@ -21,7 +21,7 @@ function* continuouslyFetchTransactions() {
 }
 
 function* fetchTransactions() {
-  const json = yield fetch('http://localhost:8000/api/transactions')
+  const json = yield fetch('/api/transactions')
     .then(response => response.json());
 
   yield put({ type: "TRANSACTIONS_RECEIVED", json: json.transactions || [{ error: json.message }] });
