@@ -1,0 +1,4 @@
+.idea
+.env
+public/node_modules
+ngrok

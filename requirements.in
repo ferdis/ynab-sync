@@ -1,0 +1,7 @@
+python-dateutil
+aiofiles
+sqlalchemy
+databases[sqlite]
+uvicorn
+starlette
+ynab-api
