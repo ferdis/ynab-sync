@@ -73,7 +73,7 @@ async def list_transactions(request):
         'transactions': [
             {
                 'id': result['id'],
-                'date': result['date'].strftime('%Y-%M-%D %H:%m:%s'),
+                'date': result['date'].strftime('%Y/%m/%d %H:%M:%S'),
                 'authorized': result['authorized'],
                 'amount': result['amount'],
                 'card': result['card'],
