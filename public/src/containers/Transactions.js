@@ -16,7 +16,7 @@ export function Transactions({ transactions }) {
       </Table.Header>
       <Table.Body>
         {transactions.map(transaction => (
-          <Table.Row key={transaction.id} positive={transaction.authorized} negative={!transaction.authorized}>
+          <Table.Row key={transaction.id} positive={transaction.authorized && transaction.description !== 'simulation'} negative={!transaction.authorized && transaction.description !== 'simulation'}>
             <Table.Cell>{transaction.id}</Table.Cell>
             <Table.Cell>{transaction.date}</Table.Cell>
             <Table.Cell>{transaction.merchant}</Table.Cell>
