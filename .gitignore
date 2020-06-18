@@ -1,4 +1,6 @@
 .idea
 .env
+__pycache__
 public/node_modules
 ngrok
+transactions.db

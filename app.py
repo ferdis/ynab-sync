@@ -14,7 +14,6 @@ import random
 import ynab_api as ynab
 
 
-# Configuration from environment variables or '.env' file.
 config = Config('.env')
 
 ynab_config =  ynab.configuration.Configuration()
@@ -47,7 +46,11 @@ app = Starlette(
     middleware=[Middleware(CORSMiddleware, allow_origins=['*'])],
 )
 
+
 def create_ynab_transaction(authorized, data):
+    """
+    Creates a transaction on YNAB
+    """
     ynab.TransactionsApi(ynab_client).create_transaction(
         budget_id=config('YNAB_BUDGET_ID'),
         data={

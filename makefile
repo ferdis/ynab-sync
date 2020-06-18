@@ -10,6 +10,7 @@ deps:
 	@pip-sync requirements.txt
 	@pip install -qe .
 	@touch transactions.db
+	@echo 'create table transactions(id INTEGER PRIMARY KEY, date DATETIME, authorized BOOLEAN, amount INTEGER, card VARCHAR, description VARCHAR, merchant VARCHAR);' | sqlite3 transactions.db
 
 up:
 	pip-compile -v requirements.in
